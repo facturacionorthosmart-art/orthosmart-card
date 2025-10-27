@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karla Emilia García Sánchez - OrthoSmart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .qr-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #qrcode {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #qrcode canvas {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card {
+            background-color: #f0f7ff;
+            border-radius: 15px;
+            padding: 25px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #4b6cb7;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-text {
+            flex-grow: 1;
+        }
+        
+        .info-text h3 {
+            font-size: 16px;
+            color: #4b6cb7;
+            margin-bottom: 5px;
+        }
+        
+        .info-text p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #666;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .info-text p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>KARLA EMILIA GARCÍA SÁNCHEZ</h1>
+            <p>OrthoSmart - Información de Contacto</p>
+        </div>
+        
+        <div class="content">
+            <div class="qr-container">
+                <h2>Escanea este código QR</h2>
+                <div id="qrcode"></div>
+                <p class="instructions">Usa la cámara de tu teléfono para escanear el código</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>NOMBRE</h3>
+                        <p>KARLA EMILIA GARCÍA SÁNCHEZ</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>EMPRESA</h3>
+                        <p>ORTHOSMART</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>NIT</h3>
+                        <p>0821-230591-101-8</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>NRC</h3>
+                        <p>293572-5</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>CORREO ELECTRÓNICO</h3>
+                        <p>facturacion.orthosmart@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>OrthoSmart &copy; 2023 - Todos los derechos reservados</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear el texto que contendrá el código QR
+            const qrText = `KARLA EMILIA GARCIA SANCHEZ
+ORTHOSMART
+NIT: 0821-230591-101-8
+NRC: 293572-5
+Correo: facturacion.orthosmart@gmail.com`;
+            
+            // Generar el código QR
+            const qrcodeElement = document.getElementById('qrcode');
+            
+            // Limpiar cualquier contenido previo
+            qrcodeElement.innerHTML = '';
+            
+            // Crear el código QR
+            QRCode.toCanvas(qrcodeElement, qrText, {
+                width: 250,
+                margin: 2,
+                color: {
+                    dark: '#182848',
+                    light: '#ffffff'
+                }
+            }, function(error) {
+                if (error) {
+                    console.error(error);
+                    // En caso de error, mostrar un mensaje
+                    qrcodeElement.innerHTML = '<p>Error al generar el código QR. Por favor, recarga la página.</p>';
+                } else {
+                    console.log('Código QR generado exitosamente');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
