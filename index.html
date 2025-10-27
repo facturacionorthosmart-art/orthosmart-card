@@ -205,8 +205,8 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo">
-                    <!-- CAMBIA "logo.png" POR EL NOMBRE REAL DE TU ARCHIVO -->
-                    <img src="logo.png" alt="OrthoSmart Logo" class="logo-img">
+                    <!-- LOGO CON NOMBRE EXACTO -->
+                    <img src="logo.jpg" alt="OrthoSmart Logo" class="logo-img">
                 </div>
             </div>
             <h1>KARLA EMILIA GARCÍA SÁNCHEZ</h1>
@@ -300,7 +300,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Crear el texto que contendrá el código QR (actualizado con nueva información)
             const qrText = `KARLA EMILIA GARCIA SANCHEZ
 ORTHOSMART
 DIRECCIÓN: AV. JOSE MATIAS DELGADO, BO. EL CENTRO, # 17, ZACATECOLUCA, LA PAZ
@@ -309,13 +308,9 @@ NIT: 0821-230591-101-8
 NRC: 293572-5
 CORREO: facturacion.orthosmart@gmail.com`;
             
-            // Generar el código QR
             const qrcodeElement = document.getElementById('qrcode');
-            
-            // Limpiar cualquier contenido previo
             qrcodeElement.innerHTML = '';
             
-            // Crear el código QR
             QRCode.toCanvas(qrcodeElement, qrText, {
                 width: 250,
                 margin: 2,
@@ -326,10 +321,7 @@ CORREO: facturacion.orthosmart@gmail.com`;
             }, function(error) {
                 if (error) {
                     console.error(error);
-                    // En caso de error, mostrar un mensaje
                     qrcodeElement.innerHTML = '<p>Error al generar el código QR. Por favor, recarga la página.</p>';
-                } else {
-                    console.log('Código QR generado exitosamente');
                 }
             });
         });
