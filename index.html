@@ -173,28 +173,6 @@
             color: #666;
             font-size: 14px;
             width: 100%;
-            position: relative;
-        }
-        
-        .visitor-counter {
-            margin-top: 10px;
-            padding: 8px 15px;
-            background: #e9ecef;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            border: 1px solid #dee2e6;
-        }
-        
-        .visitor-counter i {
-            color: #4b6cb7;
-        }
-        
-        .counter-number {
-            font-weight: bold;
-            color: #182848;
         }
         
         @media (max-width: 600px) {
@@ -219,11 +197,6 @@
                 max-width: 60px;
                 max-height: 60px;
             }
-            
-            .visitor-counter {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
         }
     </style>
 </head>
@@ -232,7 +205,6 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo">
-                    <!-- LOGO CON NOMBRE EXACTO -->
                     <img src="logo.jpg" alt="OrthoSmart Logo" class="logo-img">
                 </div>
             </div>
@@ -323,10 +295,6 @@ El uso inadecuado o no autorizado de esta información puede tener consecuencias
         
         <div class="footer">
             <p>OrthoSmart &copy; 2025 - Todos los derechos reservados</p>
-            <div class="visitor-counter">
-                <i class="fas fa-eye"></i>
-                <span>Esta página ha sido visitada <span class="counter-number" id="visitCount">0</span> veces</span>
-            </div>
         </div>
     </div>
 
@@ -356,24 +324,6 @@ CORREO: facturacion.orthosmart@gmail.com`;
                     qrcodeElement.innerHTML = '<p>Error al generar el código QR. Por favor, recarga la página.</p>';
                 }
             });
-
-            // CONTADOR DE VISITAS
-            function updateVisitorCounter() {
-                // Usar localStorage para contar visitas
-                let visitCount = localStorage.getItem('orthosmartVisitCount');
-                
-                if (!visitCount) {
-                    visitCount = 1;
-                } else {
-                    visitCount = parseInt(visitCount) + 1;
-                }
-                
-                localStorage.setItem('orthosmartVisitCount', visitCount);
-                document.getElementById('visitCount').textContent = visitCount.toLocaleString();
-            }
-
-            // Actualizar contador al cargar la página
-            updateVisitorCounter();
         });
     </script>
 </body>
